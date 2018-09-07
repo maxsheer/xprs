@@ -7,8 +7,10 @@ class MyFirstGUI:
         self.master = master
         master.title("lolkek")
 
-    def close_window(self, master):
-        master.quit()
+    def cbutton(self, master):
+        t = Button(master, text = "close")
+        t['command'] = master.destroy
+        t.grid(row=r5, column=2)
 
 
 
@@ -173,8 +175,6 @@ for i in D.votesna:
     my_list_of_entries[-1].insert(0, i)
     my_list_of_entries[-1].grid(row=r5, column=4)
     r5 += 1
-
-close_button = Button(root, text="Close", command=M.close_window(root))
-close_button.grid(row=r5, column=2)
+M.cbutton(root)
 
 root.mainloop()
